@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre o Site - Achados e Perdidos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+document.body.classList.add('page-enter');
+setTimeout(() => {
+    document.body.classList.add('page-enter-active');
+}, 10);
+
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        if (link.href && link.target !== '_blank') {
+            e.preventDefault();
+            document.body.classList.add('page-exit-active');
+            setTimeout(() => {
+                window.location = link.href;
+            }, 400);
+        }
+    });
+});
+</script>
+
+<body>
+<header>
+    <span class="logo"></span>
+    <span style="font-size:1.5em;font-weight:600;">AcheiAqui!</span>
+    <nav>
+        <a href="index.html">Principal</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="sobre.html">Sobre</a>
+    </nav>
+</header>
+<div class="container">
+    <h2>Sobre o Site</h2>
+    <p>
+        O sistema de Achados e Perdidos tem como objetivo reunir e facilitar o resgate de objetos esquecidos ou perdidos dentro do campus.<br>
+        Se você perdeu ou achou algum item, cadastre aqui para ajudar estudantes e colaboradores do IFTM Uberaba Parque Tecnológico.
+    </p>
+</div>
+</body>
+</html>

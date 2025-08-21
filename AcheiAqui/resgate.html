@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Resgate de Item - Achados e Perdidos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+document.body.classList.add('page-enter');
+setTimeout(() => {
+    document.body.classList.add('page-enter-active');
+}, 10);
+
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        if (link.href && link.target !== '_blank') {
+            e.preventDefault();
+            document.body.classList.add('page-exit-active');
+            setTimeout(() => {
+                window.location = link.href;
+            }, 400);
+        }
+    });
+});
+</script>
+
+<body>
+<header>
+    <span class="logo"></span>
+    <span style="font-size:1.5em;font-weight:600;">AcheiAqui!</span>
+    <nav>
+        <a href="index.html">Principal</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="sobre.html">Sobre</a>
+    </nav>
+</header>
+<div class="container">
+    <h2>Resgatar Item</h2>
+    <p><strong>Descrição:</strong> </p>
+    <p><strong>Local:</strong> </p>
+    <form method="POST">
+        <label for="nome">Seu nome:</label>
+        <input type="text" name="nome" id="nome" required>
+        <label for="contato">Contato (e-mail ou telefone):</label>
+        <input type="text" name="contato" id="contato" required>
+        <button type="submit">Solicitar Resgate</button>
+    </form>
+</div>
+</body>
+</html>
